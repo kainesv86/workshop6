@@ -87,6 +87,7 @@ public class ScannerCus {
 	public  String getString(Validator.StringType type, int min, int max, String msg) {
 		String str;
 		Scanner sc = new Scanner(System.in);
+		System.out.print(msg);
 		do {
 			str = sc.nextLine();
 			
@@ -101,8 +102,7 @@ public class ScannerCus {
 			//checking string follow pattern
 				if (type.equals(Validator.StringType.ALPHABET)) {
 					if (!Validator.isAlplabet(str)) {
-						System.out.println(msg);
-						System.out.print("Please enter again: ");
+						System.out.print(msg);
 					} else {
 						break;
 					}
@@ -110,16 +110,14 @@ public class ScannerCus {
 				
 				if (type.equals(Validator.StringType.ALPHANUM)) {
 					if (!Validator.isAlplaNum(str)) {
-						System.out.println(msg);
-						System.out.print("Please enter again: ");
+						System.out.print(msg);
 					} else {
 						break;
 					}
 				}
 				if (type.equals(Validator.StringType.ALPHANUMWITHSPACE)) {
 					if (!Validator.isAlplaNumWithSpace(str)) {
-						System.out.println(msg);
-						System.out.print("Please enter again: ");
+						System.out.print(msg);
 					} else {
 						break;
 					}
@@ -127,8 +125,7 @@ public class ScannerCus {
 				
 				if (type.equals(Validator.StringType.STRING)) {
 					if (!Validator.isString(str)) {
-						System.out.println(msg);
-						System.out.print("Please enter again: ");
+						System.out.print(msg);
 					} else {
 						break;
 					}
