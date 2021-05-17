@@ -42,7 +42,7 @@ public class StudentList extends ArrayList<Student> {
 			do {
 				newCode = sc.getString(Validator.StringType.ALPHANUM, 4, 4, "St. code S000: ");
 				newCode = newCode.trim().toUpperCase();
-			} while (newCode.matches(pattern));
+			} while (!newCode.matches(pattern));
 			
 			isExist = isExist(newCode);	
 			if (isExist) System.out.println("Code is duplicated!");
@@ -54,6 +54,7 @@ public class StudentList extends ArrayList<Student> {
 
 		Student st = new Student(newCode, newName, newMark);
 		this.add(st);
+		System.out.println("Student " + newCode + " has been added.");
 	}
 
 	public void searchStudent() {
@@ -89,6 +90,29 @@ public class StudentList extends ArrayList<Student> {
 
 				System.out.println("Student " + st.getCode() + " has been updated.");
 			}
+		}
+	}
+
+	public void removeStudent() {
+			if (this.isEmpty()) System.out.println("Empty list. No search can be performed!");
+		else {
+			ScannerCus sc = new ScannerCus();
+			String studentCode = sc.getString(Validator.StringType.ALPHANUMWITHSPACE, Integer.MIN_VALUE, Integer.MAX_VALUE, "Input code of removed student: ");
+			Student st = this.search(studentCode);
+
+			if (st == null) System.out.println("Student " + studentCode + " doesn't existed");
+			else {
+				this.remove(st);
+				System.out.println("Student " + studentCode + " has been removed.");
+			}
+		}
+	}
+	public void printAll() {
+		if (this.isEmpty()) System.out.println("Empty list!");
+		else {
+			System.out.println("Student list: ");
+			for (Student st: this) System.out.println(st);
+			System.out.println("Total: " + this.size() + " student(s).");
 		}
 	}
 	

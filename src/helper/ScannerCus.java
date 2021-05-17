@@ -94,8 +94,7 @@ public class ScannerCus {
 			//check length
 
 			if (str.length() > max || str.length() < min) {
-				System.out.println(msg);
-				System.out.print("Please enter again: ");
+				System.out.print(msg);
 				
 			} else {
 		

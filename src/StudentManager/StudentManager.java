@@ -5,6 +5,7 @@
  */
 package StudentManager;
 
+import Dto.StudentList;
 import helper.MenuHelper;
 
 /**
@@ -26,20 +27,26 @@ public class StudentManager {
 		menu.add("Quit");
 
 		int choice = 0;
+		StudentList list = new StudentList();
 
 		do {
 			System.out.println("\nStudent managing Program");
 			choice = menu.getChoice();
 			switch (choice) {
 				case 1:
+					list.addStudent();
 					break;
 				case 2:
+					list.searchStudent();
 					break;
 				case 3:
+					list.updataStudent();
 					break;
 				case 4:
+					list.removeStudent();
 					break;
 				case 5:
+					list.printAll();
 					break;
 				default:
 					System.out.println("Bye!");
